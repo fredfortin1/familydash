@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortin Family App</title>
+
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Favicon.ico">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <div class="toggle-container">
+    <button id="theme-toggle">Dark Theme</button>
+  </div>
+
+  <!-- Main Dashboard -->
+  <div class="dashboard">
+    <!-- First Row: Calendar and Task Assignment -->
+    <div class="row">
+      <!-- Calendar Section -->
+      <div class="calendar-container">
+        <h2>Family Calendar</h2>
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=am61am60amif3ame1dmvkf78a4@group.calendar.google.com&ctz=America/New_York&mode=AGENDA" 
+          frameborder="0" 
+          scrolling="no">
+        </iframe>
+      </div>
+
+      <!-- Task Assignment Module -->
+      <div class="task-module">
+        <h2>Task Assignment</h2>
+        <form id="task-form">
+          <input type="text" id="task-title" placeholder="Enter task description" required>
+          <select id="task-assigned-to" required>
+            <option value="">Assign to</option>
+            <option value="Éllie">Éllie</option>
+            <option value="Alexie">Alexie</option>
+          </select>
+          <input type="number" id="task-reward" placeholder="Reward ($)" required min="0">
+          <button type="submit">Add Task</button>
+        </form>
+        <div id="task-list">
+          <h3>Tasks for Éllie</h3>
+          <ul id="tasks-ellie"></ul>
+          <h3>Tasks for Alexie</h3>
+          <ul id="tasks-alexie"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row: Meals and Grocery List -->
+    <div class="row">
+      <!-- Meals Planner -->
+      <div class="meals-container">
+        <h2>Meals of the Week</h2>
+        <ul id="meals-list">
+          <!-- Dynamically added meal items -->
+        </ul>
+        <form id="meals-form">
+          <input type="text" id="meal-input" placeholder="Enter a meal" required>
+          <select id="meal-day" required>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+          </select>
+          <button type="submit">Add Meal</button>
+        </form>
+      </div>
+
+      <!-- Grocery List Module -->
+      <div class="grocery-container">
+        <h2>Grocery List</h2>
+        <form id="grocery-form">
+          <input type="text" id="grocery-item" placeholder="Enter grocery item" required>
+          <input type="number" id="grocery-quantity" placeholder="Quantity" min="1" required>
+          <input type="text" id="grocery-location" placeholder="Location (e.g., Walmart, Costco)" required>
+          <select id="grocery-category" required>
+            <option value="">Select Category</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Meat">Meat</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Other">Other</option>
+          </select>
+          <button type="submit">Add Item</button>
+        </form>
+        <div>
+          <h3>Active Grocery List</h3>
+          <ul id="grocery-list"></ul>
+        </div>
+        <div>
+          <h3>Bought Items</h3>
+          <ul id="grocery-archive"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
