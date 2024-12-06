@@ -50,12 +50,12 @@ body[data-theme="dark"] {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   padding: 20px;
-  flex: 1; /* Equal space within rows */
-  min-width: 400px; /* Ensure a minimum width */
-  max-width: 600px; /* Restrict maximum width */
-  opacity: 0; /* Fade-in animation starts hidden */
-  transform: translateY(20px); /* Slide in from below */
-  animation: fadeIn 1s ease-out forwards; /* Trigger fade-in */
+  flex: 1;
+  min-width: 400px;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
 }
 
 body[data-theme="dark"] .container,
@@ -67,24 +67,41 @@ body[data-theme="dark"] .grocery-container {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Staggered Animation for Modules */
-.calendar-container {
-  animation-delay: 0.2s;
+/* Task Module Specific Styling */
+.task-module h2 {
+  color: #4f46e5; /* Highlight color for section */
 }
-.task-module {
-  animation-delay: 0.4s;
+
+#task-list h3 {
+  margin: 10px 0;
+  font-size: 20px;
 }
-.meals-container {
-  animation-delay: 0.6s;
+
+#task-list ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
 }
-.grocery-container {
-  animation-delay: 0.8s;
+
+#task-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+body[data-theme="dark"] #task-list li {
+  background-color: #1f2937;
+  border: 1px solid #4b5563;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .row {
-    flex-direction: column; /* Stack modules vertically */
+    flex-direction: column;
   }
 }
 
@@ -147,12 +164,20 @@ button {
 
 button:hover {
   background-color: #4f46e5;
-  transform: scale(1.05); /* Slight zoom on hover */
+  transform: scale(1.05);
 }
 
 body[data-theme="dark"] button {
   background-color: #4f46e5;
   color: #e5e7eb;
+}
+
+/* Error Messages */
+.error {
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
 /* Tables */
@@ -209,7 +234,7 @@ body[data-theme="dark"] li {
 }
 
 li:hover {
-  transform: translateX(5px); /* Slight slide on hover */
+  transform: translateX(5px);
 }
 
 li button {
@@ -222,7 +247,7 @@ li button {
 
 li button:hover {
   background-color: #dc2626;
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
 /* Toggle Button */
@@ -250,7 +275,7 @@ li button:hover {
 }
 
 .calendar-container iframe:hover {
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Keyframes for Fade-In Animation */
